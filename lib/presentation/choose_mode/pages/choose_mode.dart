@@ -40,40 +40,46 @@ class ChooseModePage extends StatelessWidget {
             ),
             child: Column(
                 children: [
-                  // Align(
-                  //   alignment: Alignment.topCenter,
-                  //   child: SvgPicture.asset(
-                  //     AppVectors.logo
-                  //   ),
-                  // ),
-                  // Spacer(),
-                  // const Text(
-                  //   'Enjoy listening to music',
-                  //    style: TextStyle(
-                  //     fontWeight: FontWeight.bold,
-                  //     color: Colors.white,
-                  //     fontSize: 18
-                  //    ),
-                  //   ),
-                  //   SizedBox(height: 21,),
-            
-                  // const Text(
-                  //   'Enjoy listening to music Enjoy listening to musicEnjoy listening to musicEnjoy listening to musicEnjoy listening to musicEnjoy listening to musicEnjoy listening to musicEnjoy listening to music',
-                  //    style: TextStyle(
-                  //     fontWeight: FontWeight.w500,
-                  //     color: AppColors.grey,
-                  //     fontSize: 14
-                  //    ),
-                  //    textAlign: TextAlign.center,
-                  //   ),
-                  // SizedBox(height: 20,),
-                  // BasicButton(onPressed: (){
-                  //   Navigator.push(context, 
-                  //   MaterialPageRoute(builder: (BuildContext context) => ChooseModePage()
-                  //   )
-                  //   );
-                  // }, title: 'Get started'
-                  // ),
+                  Align(
+                    alignment: Alignment.topCenter,
+                    child: SvgPicture.asset(
+                      AppVectors.logo
+                    ),
+                  ),
+                  Spacer(),
+                  const Text(
+                    'Choose your prefered mode ',
+                     style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      fontSize: 18
+                     ),
+                    ),
+                   SizedBox(height: 21,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        // ignore: sized_box_for_whitespace
+                        Container(
+                          height: 50,
+                          width: 50,
+                      
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            shape: BoxShape.circle
+                          ),
+                        )
+                      ],
+                    ),
+
+                   SizedBox(height: 50,),
+                  BasicButton(onPressed: (){
+                    Navigator.push(context, 
+                    MaterialPageRoute(builder: (BuildContext context) => ChooseModePage()
+                    )
+                    );
+                  }, title: 'Continue'
+                  ),
                 ],
               ),
           ),
