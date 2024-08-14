@@ -1,5 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:music_app/common/widget/button/basic_button.dart';
@@ -16,72 +15,121 @@ class ChooseModePage extends StatelessWidget {
       body: Stack(
         children: [
           Container(
-            padding: EdgeInsets.symmetric(
+            padding: const EdgeInsets.symmetric(
               vertical: 50,
-              horizontal: 50
+              horizontal: 50,
             ),
             decoration: const BoxDecoration(
               image: DecorationImage(
                 fit: BoxFit.fill,
-                image: AssetImage(
-                  AppImages.chooseModeBG,
-                )
-              )
+                image: AssetImage(AppImages.chooseModeBG),
+              ),
             ),
           ),
-
           Container(
             color: Colors.black.withOpacity(0.15),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(
               horizontal: 40,
-              vertical:40
+              vertical: 40,
             ),
             child: Column(
-                children: [
-                  Align(
-                    alignment: Alignment.topCenter,
-                    child: SvgPicture.asset(
-                      AppVectors.logo
-                    ),
+              children: [
+                Align(
+                  alignment: Alignment.topCenter,
+                  child: SvgPicture.asset(AppVectors.logo),
+                ),
+                const Spacer(),
+                const Text(
+                  'Choose your preferred mode',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    fontSize: 18,
                   ),
-                  Spacer(),
-                  const Text(
-                    'Choose your prefered mode ',
-                     style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      fontSize: 18
-                     ),
-                    ),
-                   SizedBox(height: 21,),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                ),
+                const SizedBox(height: 40),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Column(
                       children: [
-                        // ignore: sized_box_for_whitespace
-                        Container(
-                          height: 50,
-                          width: 50,
-                      
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            shape: BoxShape.circle
+                        ClipOval(
+                          child: BackdropFilter(
+                            filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                            child: Container(
+                              height: 80,
+                              width: 80,
+                              decoration: BoxDecoration(
+                                color: const Color(0xff30393C).withOpacity(0.5),
+                                shape: BoxShape.circle,
+                              ),
+                              child: SvgPicture.asset(
+                                AppVectors.moon,
+                                fit: BoxFit.none,
+                              ),
+                            ),
                           ),
-                        )
+                        ),
+                        const SizedBox(height: 15),
+                        const Text(
+                          'Dark Mode',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 17,
+                            color: AppColors.grey,
+                          ),
+                        ),
                       ],
                     ),
-
-                   SizedBox(height: 50,),
-                  BasicButton(onPressed: (){
-                    Navigator.push(context, 
-                    MaterialPageRoute(builder: (BuildContext context) => ChooseModePage()
-                    )
-                    );
-                  }, title: 'Continue'
-                  ),
-                ],
-              ),
+                    const SizedBox(width: 40),
+                    Column(
+                      children: [
+                        ClipOval(
+                          child: BackdropFilter(
+                            filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                            child: Container(
+                              height: 80,
+                              width: 80,
+                              decoration: BoxDecoration(
+                                color: const Color(0xff30393C).withOpacity(0.5),
+                                shape: BoxShape.circle,
+                              ),
+                              child: SvgPicture.asset(
+                                AppVectors.sun,
+                                fit: BoxFit.none,
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 15),
+                        const Text(
+                          'Light Mode',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 17,
+                            color: AppColors.grey,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 50),
+                BasicButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => const ChooseModePage(),
+                      ),
+                    );ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+                  },
+                  title: 'Continue',
+                ),
+              ],
+            ),
           ),
         ],
       ),
