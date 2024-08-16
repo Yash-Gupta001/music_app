@@ -3,5 +3,6 @@
         "cupertino",
         "Satoshi",
         "Schyler"
-    ]
+    ],
+    "java.configuration.updateBuildConfiguration": "interactive"
 }

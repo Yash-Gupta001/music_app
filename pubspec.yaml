@@ -15,6 +15,8 @@ dependencies:
   lorem_ipsum: ^0.0.3
   hydrated_bloc: ^9.1.5
   path_provider: ^2.1.4
+  flutter_bloc: ^8.1.6
+  firebase_core: ^2.24.2
 
 dev_dependencies:
   flutter_test:
