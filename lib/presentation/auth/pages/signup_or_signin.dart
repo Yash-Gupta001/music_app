@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:music_app/common/helpers/is_dark_mode.dart';
+import 'package:music_app/common/widget/appbar/app_bar.dart';
 import 'package:music_app/common/widget/button/basic_button.dart';
 import 'package:music_app/core/configs/assets/app_images.dart';
 import 'package:music_app/core/configs/assets/app_vectors.dart';
@@ -13,6 +15,7 @@ class SignupOrSignin extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
+          const BasicAppbar(),
           Align(
             alignment: Alignment.topRight,
             child: SvgPicture.asset(
@@ -85,12 +88,22 @@ class SignupOrSignin extends StatelessWidget {
                       const SizedBox(
                         width:20,
                       ),
-                      TextButton(onPressed: (){
 
-                      }, 
-                      child: Text(
-                        'Sign in'
-                      ))
+                      Expanded(
+                        flex: 1,
+                        child: TextButton(onPressed: (){
+                        
+                        }, 
+                        child: Text(
+                          'Sign in',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                            color: context.isDarkMode ? Colors.white : Colors.black 
+                          ),
+                        )
+                        ),
+                      )
                     ],
                   )
                 ],

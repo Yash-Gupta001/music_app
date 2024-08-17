@@ -60,17 +60,17 @@ class ChooseModePage extends StatelessWidget {
                       children: [
                         GestureDetector(
                           onTap: (){
-                            context.read<ThemeCubit>().updateTheme(ThemeMode.light);
-  },
+                            context.read<ThemeCubit>().updateTheme(ThemeMode.dark);
+                          },
                           child: ClipOval(
                             child: BackdropFilter(
-                              filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                              filter: ImageFilter.blur(sigmaX: 10,sigmaY: 10),
                               child: Container(
                                 height: 80,
                                 width: 80,
                                 decoration: BoxDecoration(
                                   color: const Color(0xff30393C).withOpacity(0.5),
-                                  shape: BoxShape.circle,
+                                  shape: BoxShape.circle
                                 ),
                                 child: SvgPicture.asset(
                                   AppVectors.moon,
@@ -80,36 +80,35 @@ class ChooseModePage extends StatelessWidget {
                             ),
                           ),
                         ),
-                        const SizedBox(height: 15),
+                        const SizedBox(height: 15,),
                         const Text(
                           'Dark Mode',
                           style: TextStyle(
                             fontWeight: FontWeight.w500,
                             fontSize: 17,
-                            color: AppColors.grey,
+                            color: AppColors.grey
                           ),
-                        ),
+                        )
                       ],
                     ),
-
-                    const SizedBox(width: 40),
+                    const SizedBox(width: 40,),
                     Column(
                       children: [
                         GestureDetector(
                           onTap: (){
-                            context.read<ThemeCubit>().updateTheme(ThemeMode.dark);
-  },
+                            context.read<ThemeCubit>().updateTheme(ThemeMode.light);
+                          },
                           child: ClipOval(
                             child: BackdropFilter(
-                              filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                              filter: ImageFilter.blur(sigmaX: 10,sigmaY: 10),
                               child: Container(
                                 height: 80,
                                 width: 80,
                                 decoration: BoxDecoration(
                                   color: const Color(0xff30393C).withOpacity(0.5),
-                                  shape: BoxShape.circle,
+                                  shape: BoxShape.circle
                                 ),
-                                child: SvgPicture.asset(
+                                 child: SvgPicture.asset(
                                   AppVectors.sun,
                                   fit: BoxFit.none,
                                 ),
@@ -117,33 +116,33 @@ class ChooseModePage extends StatelessWidget {
                             ),
                           ),
                         ),
-                        const SizedBox(height: 15),
+                      const SizedBox(height: 15,),
                         const Text(
                           'Light Mode',
                           style: TextStyle(
                             fontWeight: FontWeight.w500,
                             fontSize: 17,
-                            color: AppColors.grey,
+                            color: AppColors.grey
                           ),
-                        ),
+                        )
                       ],
                     ),
                   ],
-                ),
-                const SizedBox(height: 50),
-                BasicButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (BuildContext context) => const SignupOrSignin(),
-                      ),
-                    );
-                  },
-                  title: 'Continue',
-                ),
-              ],
-            ),
+                 ),
+                  const SizedBox(height: 50,),
+                  BasicButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => const SignupOrSignin()
+                        )
+                     );
+                    },
+                    title: 'Continue'
+                  )
+                ],
+              ),
           ),
         ],
       ),
