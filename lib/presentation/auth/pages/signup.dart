@@ -1,10 +1,105 @@
 import 'package:flutter/material.dart';
+import 'package:music_app/common/widget/appbar/app_bar.dart';
+import 'package:music_app/presentation/auth/pages/signin.dart';
 
 class Signup extends StatelessWidget {
   const Signup({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return  Scaffold(
+      appBar:  BasicAppbar(),
+      body:Padding(
+        padding: EdgeInsets.symmetric(
+          vertical: 50,
+          horizontal: 30
+        ),
+      
+       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          _registerText(),
+          const SizedBox(height: 50,),
+          _fullNameField(context),
+        ],
+      ),
+      ),
+    );
   }
+  Widget _registerText() {
+    return const Text(
+      'Register',
+      style: TextStyle(
+        fontWeight: FontWeight.bold,
+        fontSize: 25
+      ),
+      textAlign: TextAlign.center,
+    );
+  }
+  
+  Widget _fullNameField(BuildContext context) {
+    return TextField(
+      //controller: _fullName,
+      decoration: const InputDecoration(
+        hintText: 'Full Name'
+      ).applyDefaults(
+        Theme.of(context).inputDecorationTheme
+      ),
+    );
+  }
+
+  Widget _emailField(BuildContext context) {
+    return TextField(
+      //controller: _email,
+      decoration: const InputDecoration(
+        hintText: 'Enter Email'
+      ).applyDefaults(
+        Theme.of(context).inputDecorationTheme
+      ),
+    );
+  }
+
+  //  Widget _passwordField(BuildContext context) {
+  //   return TextField(
+  //     controller: _password,
+  //     decoration: const InputDecoration(
+  //       hintText: 'Password'
+  //     ).applyDefaults(
+  //       Theme.of(context).inputDecorationTheme
+  //     ),
+  //   );
+  // }
+
+  // Widget _siginText(BuildContext context) {
+  //   return Padding(
+  //     padding: const EdgeInsets.symmetric(
+  //       vertical: 30
+  //     ),
+  //     child: Row(
+  //       mainAxisAlignment: MainAxisAlignment.center,
+  //       children: [
+  //         const Text(
+  //           'Do you have an account? ',
+  //           style: TextStyle(
+  //             fontWeight: FontWeight.w500,
+  //             fontSize: 14
+  //           ),
+  //         ),
+  //         TextButton(
+  //           onPressed: (){
+  //             Navigator.pushReplacement(
+  //               context,
+  //               MaterialPageRoute(
+  //                 builder: (BuildContext context) => SigninPage()
+  //               )
+  //             );
+  //           },
+  //           child: const Text(
+  //             'Sign In'
+  //           )
+  //         )
+  //       ],
+  //     ),
+  //   );
+  // }
 }
