@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:music_app/common/widget/appbar/app_bar.dart';
+import 'package:music_app/common/widget/button/basic_button.dart';
 import 'package:music_app/presentation/auth/pages/signin.dart';
 
 class Signup extends StatelessWidget {
@@ -8,9 +9,9 @@ class Signup extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      appBar:  BasicAppbar(),
+      appBar:  const BasicAppbar(),
       body:Padding(
-        padding: EdgeInsets.symmetric(
+        padding: const EdgeInsets.symmetric(
           vertical: 50,
           horizontal: 30
         ),
@@ -21,6 +22,17 @@ class Signup extends StatelessWidget {
           _registerText(),
           const SizedBox(height: 50,),
           _fullNameField(context),
+          const SizedBox(height: 20,),
+          _emailField(context),
+          const SizedBox(height: 20,),
+          _passwordField(context),
+          const SizedBox(height: 20,),
+          BasicButton(
+            onPressed: (){
+
+          }, 
+          title: 'Create Account'),
+          _siginText(context)
         ],
       ),
       ),
@@ -59,47 +71,47 @@ class Signup extends StatelessWidget {
     );
   }
 
-  //  Widget _passwordField(BuildContext context) {
-  //   return TextField(
-  //     controller: _password,
-  //     decoration: const InputDecoration(
-  //       hintText: 'Password'
-  //     ).applyDefaults(
-  //       Theme.of(context).inputDecorationTheme
-  //     ),
-  //   );
-  // }
+   Widget _passwordField(BuildContext context) {
+    return TextField(
+      //controller: _password,
+      decoration: const InputDecoration(
+        hintText: 'Password'
+      ).applyDefaults(
+        Theme.of(context).inputDecorationTheme
+      ),
+    );
+  }
 
-  // Widget _siginText(BuildContext context) {
-  //   return Padding(
-  //     padding: const EdgeInsets.symmetric(
-  //       vertical: 30
-  //     ),
-  //     child: Row(
-  //       mainAxisAlignment: MainAxisAlignment.center,
-  //       children: [
-  //         const Text(
-  //           'Do you have an account? ',
-  //           style: TextStyle(
-  //             fontWeight: FontWeight.w500,
-  //             fontSize: 14
-  //           ),
-  //         ),
-  //         TextButton(
-  //           onPressed: (){
-  //             Navigator.pushReplacement(
-  //               context,
-  //               MaterialPageRoute(
-  //                 builder: (BuildContext context) => SigninPage()
-  //               )
-  //             );
-  //           },
-  //           child: const Text(
-  //             'Sign In'
-  //           )
-  //         )
-  //       ],
-  //     ),
-  //   );
-  // }
+  Widget _siginText(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        vertical: 30
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Text(
+            'Do you have an account? ',
+            style: TextStyle(
+              fontWeight: FontWeight.w500,
+              fontSize: 14
+            ),
+          ),
+          TextButton(
+            onPressed: (){
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (BuildContext context) => const Signin()
+                )
+              );
+            },
+            child: const Text(
+              'Sign In'
+            )
+          )
+        ],
+      ),
+    );
+  }
 }
