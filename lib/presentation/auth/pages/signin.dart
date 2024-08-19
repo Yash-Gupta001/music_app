@@ -21,8 +21,6 @@ class Signin extends StatelessWidget {
         children: [
           _registerText(),
           const SizedBox(height: 50,),
-          _fullNameField(context),
-          const SizedBox(height: 20,),
           _emailField(context),
           const SizedBox(height: 20,),
           _passwordField(context),
@@ -40,7 +38,7 @@ class Signin extends StatelessWidget {
   }
   Widget _registerText() {
     return const Text(
-      'Register',
+      'Sign in',
       style: TextStyle(
         fontWeight: FontWeight.bold,
         fontSize: 25
@@ -49,16 +47,16 @@ class Signin extends StatelessWidget {
     );
   }
   
-  Widget _fullNameField(BuildContext context) {
-    return TextField(
-      //controller: _fullName,
-      decoration: const InputDecoration(
-        hintText: 'Full Name'
-      ).applyDefaults(
-        Theme.of(context).inputDecorationTheme
-      ),
-    );
-  }
+  // Widget _fullNameField(BuildContext context) {
+  //   return TextField(
+  //     controller: _fullName,
+  //     decoration: const InputDecoration(
+  //       hintText: 'Full Name'
+  //     ).applyDefaults(
+  //       Theme.of(context).inputDecorationTheme
+  //     ),
+  //   );
+  // }
 
   Widget _emailField(BuildContext context) {
     return TextField(
