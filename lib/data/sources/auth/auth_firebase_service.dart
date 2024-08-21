@@ -72,7 +72,6 @@ class AuthFirebaseServiceImpl extends AuthFirebaseService {
         message = 'An account already exists with that email.';
       }
 
-
       return Left(message);
     }
   }
