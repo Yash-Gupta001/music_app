@@ -38,8 +38,6 @@ class AuthFirebaseServiceImpl extends AuthFirebaseService {
       } else if (e.code == 'invalid-credential') {
         message = 'Wrong password provided for that user';
       }
-
-
       return Left(message);
     }
   }
